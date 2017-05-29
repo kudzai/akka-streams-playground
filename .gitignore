@@ -1,0 +1,6 @@
+
+### Scala template
+*.log
+.idea/
+target/
+*.pdf
