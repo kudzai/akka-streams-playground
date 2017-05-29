@@ -15,7 +15,7 @@ class SimpleProducerStream(implicit system: ActorSystem) {
 
   val source = Source(1 to 20)
   val flow = Flow[Int]
-    .map(_.toString)
+    .map(i => s"message $i")
     .map { new ProducerRecord[Array[Byte], String]("mytest", _)}
 
   val sink = Producer.plainSink(producerSettings)
